@@ -1,0 +1,44 @@
+:root{
+    --main-color: white;
+    --ptu-green: #009b64;
+    --ptu-red: #EE0031;
+    --ptu-gray: #CDCDCD;
+    --text: black;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+header{
+    background-color: var(--ptu-gray);
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+header img{
+    width: 180px;
+    margin: auto 0.7rem;
+}
+
+header ul{
+    list-style: none;
+    padding: 0;
+    margin: auto 0.7rem;
+}
+
+header ul li{
+    display: inline;
+    font-size: 18px;
+}
+
+header ul li a{
+    color: var(--texttext);
+    text-decoration: none;
+    padding: 10px 20px;
+}
