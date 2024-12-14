@@ -6,11 +6,16 @@
     --text: black;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 html, body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: white;
+    max-width: 100vw;
 }
 
 header{
@@ -19,6 +24,8 @@ header{
     text-align: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    max-width: 100vw;
 }
 
 header img{
@@ -46,10 +53,208 @@ header ul li a{
 .main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
     grid-gap: 20px;
     padding: 20px;
     grid-template-areas: 
-    "Intro Intro Intro"
-    "`";
+    "Intro Intro"
+    "notice board"
+    "gallery gallery";
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.intro{
+    grid-area: Intro;
+    background-color: var(--ptu-gray);
+    display: flex;
+    max-width: 100vw;
+}
+
+.intro h1{
+    grid-area: intro-title;
+}
+
+.intro-text{
+    grid-area: intro-text;
+}
+
+.intro-text h1{
+    margin: 1rem 0.5rem;
+}
+
+.intro-text p{
+    margin: 1rem 0.5rem;
+    flex-wrap: wrap;
+}
+
+.intro-img{
+    grid-area: intro-img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-img img{
+    width: 50%;
+    height: auto;
+}
+
+.notice{
+    grid-area: notice;
+    background-color: var(--ptu-gray);
+    max-width: 70vw;
+    height: 30vh;
+}
+
+.notice h1{
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+.notice ul{
+    margin: 0.5rem;
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+    max-height: calc(100% - 60px);
+}
+
+.notice ul li{
+    margin: 0.5rem 0;
+}
+
+.notice ul li a{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+
+.board{
+    grid-area: board;
+    background-color: var(--ptu-gray);
+    width: 30vw;
+}
+
+.board h1{
+    margin: 1rem 0.5rem;
+}
+
+.board ul{
+    margin: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.board ul li{
+    margin: 0.5rem 0;
+}
+
+.board ul li a{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.gallery{
+    grid-area: gallery;
+    background-color: var(--ptu-gray);
+}
+
+.gallery h1{
+    margin: 1rem 0.5rem;
+}
+
+.gallery ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+}
+
+.gallery ul li img{
+    width: 30%;
+    height: auto;
+}
+
+footer{
+    background-color: var(--ptu-gray);
+    text-align: center;
+    padding: 10px 0;
+    max-width: 100vw;
+}
+
+footer img{
+    width: 300px;
+}
+
+@media (min-width:769px) and (max-width: 1200px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "Intro Intro"
+        "notice board"
+        "gallery gallery";
+    }
+
+    .notice {
+        max-width: 75vw;
+    }
+
+    .board {
+        width: 25vw;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header img {
+        margin: 0.5rem 0;
+    }
+
+    header ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        "Intro"
+        "notice"
+        "board"
+        "gallery";
+    }
+
+    .notice, .gallery, .intro, .board {
+        max-width: 100vw;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro, .notice, .board, .gallery {
+        padding: 10px;
+    }
+
+    .intro h1, .notice h1, .board h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro-text, .notice ul, .board ul {
+        font-size: 1rem;
+    }
 }
