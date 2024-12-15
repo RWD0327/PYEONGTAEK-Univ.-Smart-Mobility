@@ -38,7 +38,6 @@ header ul {
     list-style: none;
     padding: 0;
     margin: auto 0.7rem;
-    display: flex;
 }
 
 header ul li {
@@ -112,22 +111,6 @@ header ul li a {
     margin: 1rem;
     cursor: pointer;
     font-size: 1.5rem;
-}
-
-ul{
-    list-style: none;
-    margin: 1rem;
-    width: 80%;
-    height: 100%;
-    background-color: var(--ptu-gray);
-}
-
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid var(--ptu-gray);
 }
 
 .add-notice {
