@@ -58,10 +58,9 @@ header ul li a {
     grid-gap: 20px;
     padding: 20px;
     grid-template-areas: 
-        "Intro"
-        "notice"
-        "board"
-        "gallery";
+        "Intro Intro"
+        "notice board"
+        "gallery gallery";
     max-width: 100vw;
     max-height: 100vh;
 }
