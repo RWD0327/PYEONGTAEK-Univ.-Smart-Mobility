@@ -1,8 +1,0 @@
-CREATE TABLE Notices (
-    NoticeId INT IDENTITY(1,1) PRIMARY KEY,
-    Title NVARCHAR(200) NOT NULL,
-    Content NVARCHAR(MAX) NOT NULL,
-    CreatedDate DATETIME DEFAULT GETDATE(),
-    ModifiedDate DATETIME,
-    IsDeleted BIT DEFAULT 0
-);
